@@ -1,4 +1,3 @@
 <template>
-    <h1>Starred page</h1>
-
+  <h1>Starred page</h1>
 </template>
