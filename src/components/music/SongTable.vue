@@ -7,18 +7,29 @@
   >
     <template #item.title="{ item }">
       <tr>
-        <td></td>
         <td>
-          <div class="my-1">
-            <div class="text-title font-weight-medium">{{ item.title }}</div>
-            <div class="single-line-clamp">
-              <span class="text-subtitle-2 grey--text">
-                {{ item.artist }}
-              </span>
+          <div class="d-flex my-1">
+            <span class="pl-0">
+              <v-img
+                width="45"
+                height="45"
+                :src="item.coverImage"
+                class="rounded"
+                style="background-color: gray"
+              >
+              </v-img>
+            </span>
+            <div class="pl-4">
+              <div class="text-title font-weight-medium">{{ item.title }}</div>
+              <div class="single-line-clamp">
+                <span class="text-subtitle-2 grey--text">
+                  {{ item.artist }}
+                </span>
+              </div>
             </div>
           </div>
         </td>
-        <td colspan="4"></td>
+        <td colspan="0"></td>
       </tr>
     </template>
 
@@ -46,7 +57,7 @@ export default {
       musics: musicData,
       headers: [
         {
-          text: "Music Title",
+          text: "Music",
           align: "start",
           sortable: false,
           value: "title",
@@ -74,3 +85,5 @@ export default {
   },
 };
 </script>
+
+<style></style>
