@@ -33,7 +33,7 @@
     <v-list nav dense>
       <template v-for="item in navItems">
         <v-divider :key="item.title" v-if="item.divider"></v-divider>
-        <v-list-item :key="item.title" link :href="item.to">
+        <v-list-item :key="item.title" link :to="item.to">
           <v-tooltip right :disabled="!toggle">
             <template v-slot:activator="{ on }">
               <v-list-item-icon v-on="on">
