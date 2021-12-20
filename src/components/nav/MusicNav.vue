@@ -41,6 +41,7 @@
               height="60"
               :src="currentSong.coverImage"
               class="rounded"
+              style="background-color: gray"
             ></v-img>
           </span>
 
@@ -70,8 +71,16 @@
           <v-btn icon color="secondary" class="mx-0" fab>
             <v-icon>mdi-playlist-music</v-icon>
           </v-btn>
-          <v-btn icon color="secondary" class="mx-0" fab>
-            <v-icon>mdi-heart-outline</v-icon>
+          <v-btn
+            icon
+            color="secondary"
+            class="mx-0"
+            fab
+            @click="LikeButtonHandler"
+          >
+            <v-icon>{{
+              currentSong.userLike ? "mdi-heart" : "mdi-heart-outline"
+            }}</v-icon>
           </v-btn>
         </div>
       </div>
@@ -99,6 +108,9 @@ export default {
     },
     ChangeVolume(value) {
       this.$store.dispatch("music/changeVolume", value);
+    },
+    LikeButtonHandler() {
+      this.$store.dispatch("music/likeButtonHandler", this.currentSong);
     },
   },
 

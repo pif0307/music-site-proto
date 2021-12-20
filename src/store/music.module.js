@@ -44,6 +44,22 @@ const music = {
       state.volume = value / 100;
       state.player.volume = value / 100;
     },
+
+    likeMusic(state, music) {
+      music.userLike = true;
+    },
+
+    dislikeMusic(state, music) {
+      music.userLike = false;
+    },
+
+    likeButtonHandler(state, music) {
+      if (music.userLike) {
+        music.userLike = false;
+      } else {
+        music.userLike = true;
+      }
+    },
   },
 
   mutations: {
@@ -53,10 +69,12 @@ const music = {
       state.player.volume = state.volume;
       state.player.currentTime = state.songTime;
     },
+
     pause(state) {
       state.isPlaying = false;
       state.songTime = state.player.currentTime;
     },
+
     change(state, song) {
       state.songTime = 0;
       state.currentSong = song;
