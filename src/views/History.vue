@@ -1,7 +1,15 @@
 <template>
   <div class="about">
-    <h1>History page</h1>
-    <h2>{{ $store.state.music.playerNavState }}</h2>
-    <v-btn @click="$store.state.music.playerNavState = true">increase</v-btn>
+    <v-card class="mx-3 my-3"> <HistoryTable /> </v-card>
   </div>
 </template>
+
+<script>
+import HistoryTable from "@/components/music/HistoryTable.vue";
+
+export default {
+  components: {
+    HistoryTable,
+  },
+};
+</script>

@@ -16,6 +16,8 @@ const music = {
     player: new Audio(),
     timer: null,
 
+    musicHistory: new Array(),
+
     volume: 0.2,
   },
 
@@ -79,6 +81,8 @@ const music = {
       state.songTime = 0;
       state.currentSong = song;
       state.player.src = song.src;
+
+      state.musicHistory.unshift(song);
     },
 
     timerFunction(state) {
